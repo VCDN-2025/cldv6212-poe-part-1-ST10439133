@@ -32,7 +32,7 @@ Setup Instructions:
 4.Restore dependencies: dotnet restore
 5.Build the project: dotnet build
 6.Run the project: dotnet run
-7.Access the application at https://localhost:5001 or the URL provided in your terminal.
+7.Access the application at https://st10439133.azurewebsites.net .
 
 License:
 This project is developed for academic purposes as part of a practical assignment for ABC Retail. Redistribution or commercial use should be clarified with the project owner.
