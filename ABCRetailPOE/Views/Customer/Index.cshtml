@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewData["Title"] = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold text-primary">Customer List</h2>
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-person-plus-fill"></i> Add New Customer
+        </a>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th style="width: 160px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in Model)
+                    {
+                        <tr>
+                            <td>@customer.FirstName</td>
+                            <td>@customer.LastName</td>
+                            <td>@customer.Email</td>
+                            <td>@customer.PhoneNumber</td>
+                            <td>@customer.Address</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a asp-action="Details" asp-route-partitionKey="@customer.PartitionKey" asp-route-rowKey="@customer.RowKey" class="btn btn-outline-info">Details</a>
+                                    <a asp-action="Edit" asp-route-partitionKey="@customer.PartitionKey" asp-route-rowKey="@customer.RowKey" class="btn btn-outline-warning">Edit</a>
+                                    <a asp-action="Delete" asp-route-partitionKey="@customer.PartitionKey" asp-route-rowKey="@customer.RowKey" class="btn btn-outline-danger">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No customers found. Click <strong>Add New Customer</strong> to begin.
+        </div>
+    }
+</div>
+
+

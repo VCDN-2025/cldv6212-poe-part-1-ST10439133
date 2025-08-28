@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Welcome to ABC Retail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Hero Section -->
+    <div class="jumbotron text-white bg-dark p-5 mb-5 rounded-3">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-4 fw-bold">Welcome to ABC Retail</h1>
+                <p class="lead">Your one-stop shop for the latest and greatest in electronics. Laptops, smartphones, smartwatches, and more — all at unbeatable prices.</p>
+                <a class="btn btn-primary btn-lg" asp-controller="Product" asp-action="Index">Shop Now</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="@Url.Content("~/images/Electronics.jpeg")" class="img-fluid rounded" alt="Electronics Banner" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="mb-5">
+        <h2 class="mb-4 text-center">Shop by Category</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Laptops.jpeg")" class="card-img-top" alt="Laptops">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptops</h5>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary btn-sm">Browse</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Phones.jpeg")" class="card-img-top" alt="Phones">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphones</h5>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary btn-sm">Browse</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Accessories.jpeg")" class="card-img-top" alt="Accessories">
+                    <div class="card-body">
+                        <h5 class="card-title">Accessories</h5>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary btn-sm">Browse</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Smartwatches.jpeg")" class="card-img-top" alt="Smartwatches">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartwatches</h5>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary btn-sm">Browse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section>
+        <h2 class="mb-4 text-center">Featured Products</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Macbook Pro 14.jpeg")" class="card-img-top" alt="MacBook Pro 14">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">MacBook Pro 14"</h5>
+                        <p class="text-muted">R13,999.00</p>
+                        <a class="btn btn-sm btn-outline-success" asp-controller="Product" asp-action="Details" asp-route-rowKey="ROWKEY1" asp-route-partitionKey="products">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Samsung Galaxy S22.jpeg")" class="card-img-top" alt="Samsung Galaxy S22">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Samsung Galaxy S22</h5>
+                        <p class="text-muted">R8000.00</p>
+                        <a class="btn btn-sm btn-outline-success" asp-controller="Product" asp-action="Details" asp-route-rowKey="ROWKEY2" asp-route-partitionKey="products">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Sony WH-1000XM5.jpeg")" class="card-img-top" alt="Sony WH-1000XM5">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sony WH-1000XM5</h5>
+                        <p class="text-muted">R600.00</p>
+                        <a class="btn btn-sm btn-outline-success" asp-controller="Product" asp-action="Details" asp-route-rowKey="ROWKEY3" asp-route-partitionKey="products">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@Url.Content("~/images/Apple Watch Series 9.jpeg")" class="card-img-top" alt="Apple Watch Series 9">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Apple Watch Series 9</h5>
+                        <p class="text-muted">R9000.00</p>
+                        <a class="btn btn-sm btn-outline-success" asp-controller="Product" asp-action="Details" asp-route-rowKey="ROWKEY4" asp-route-partitionKey="products">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

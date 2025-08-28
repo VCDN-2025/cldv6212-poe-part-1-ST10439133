@@ -1,0 +1,49 @@
+﻿@using System.Linq
+@model List<string>
+
+@{
+    ViewData["Title"] = "Contract Uploads";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Uploaded Contracts</h2>
+
+    <!-- Upload Form -->
+    <form asp-controller="Contract" asp-action="Upload" method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="input-group">
+            <input type="file" name="contract" class="form-control" required />
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+
+    <!-- Files Table -->
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>File Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var file in Model)
+                {
+                    <tr>
+                        <td>@file</td>
+                        <td>
+                            <a asp-controller="Contract" asp-action="Download" asp-route-fileName="@file" class="btn btn-success btn-sm">
+                                Download
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">No files found.</p>
+    }
+</div>

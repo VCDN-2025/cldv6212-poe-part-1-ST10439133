@@ -1,0 +1,25 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Delete Order";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Order</h2>
+
+<h4>Are you sure you want to delete this order?</h4>
+<div>
+    <strong>First Name:</strong> @Model.FirstName<br />
+    <strong>Product Name:</strong> @Model.ProductName<br />
+    <strong>Quantity:</strong> @Model.Quantity<br />
+    <strong>Status:</strong> @Model.Status<br />
+    <strong>Shipping Address:</strong> @Model.ShippingAddress<br />
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="partitionKey" value="@Model.PartitionKey" />
+    <input type="hidden" name="rowKey" value="@Model.RowKey" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+
